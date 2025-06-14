@@ -2,47 +2,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Codere's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'portfolioapp/css/styles.css' %}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Codere's Portfolio{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'portfolioapp/css/styles.css' %}" />
 </head>
 <body>
-    <h1><a href="{% url 'home' %}">BACK-END DEVELOPER PORTFOLIO</a></h1>
+  <header>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="banner-image" style="text-align: center;">
-        <img src="{% static 'portfolioapp/images/portfolio_banner2.png' %}" alt="Banner Image">
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <div class="social-footer">
+      <a href="https://github.com/BasSchreurs" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://www.linkedin.com/in/bas-schreurs-a6628015b" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
     </div>
-
-    <div class="text-links-wrapper">
-        {% block welcome_text %}
-        <!-- This block will hold the welcome/about text that changes per page -->
-        {% endblock %}
-
-        <nav class="side-links">
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'projects' %}">Projects</a></li>
-                <li><a href="{% url 'about' %}">About Me</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-            </ul>
-        </nav>
+    <div style="text-align: center; color: #eee; margin-top: 15px; font-size: 0.9rem; padding-bottom: 20px;">
+      &copy;2025  
+      <a href="{% url 'contact' %}" style="color: #ff9800; text-decoration: none;">contact@basschreurs.nl</a>  
+      — (Django) Web Developer
     </div>
-
-    {% block content %}
-    <!-- Unique page content will go here -->
-    {% endblock %}
-
-    <!-- 🌐 Social Footer -->
-    <footer style="text-align: center; margin-top: 50px; padding: 20px;">
-    <a href="https://github.com/BasSchreurs" target="_blank" style="color: white; margin: 0 15px; text-decoration: none;">
-        <i class="fab fa-github fa-2x"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/bas-schreurs-a6628015b" target="_blank" style="color: white; margin: 0 15px; text-decoration: none;">
-        <i class="fab fa-linkedin fa-2x"></i>
-    </a>
-</footer>
+  </footer>
 </body>
 </html>

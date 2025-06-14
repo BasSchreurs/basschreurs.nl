@@ -1,8 +1,40 @@
 {% extends "portfolioapp/base.html" %}
+{% load static %}
 
-{% block welcome_text %}
-<p>
-    Welcome to my portfolio! This is a simple Django application showcasing my work as a back-end developer. 
-    Feel free to explore the code and learn more about my projects.
-</p>
+{% block content %}
+  <div class="banner-container">
+    <img src="{% static 'portfolioapp/images/banner.png' %}" alt="Banner Image" class="banner-image" />
+  </div>
+
+  <section class="projects">
+    <h2>My Projects</h2>
+    <div class="projects-list">
+        <article class="project-card">
+            <h3>Guestbook</h3>
+            <p>
+              Welcome to my Guestbook! If you enjoyed exploring my projects or have cool ideas for apps I could build, drop a note below.
+              Whether it’s praise, suggestions, or just a hello — I’d love to hear from you!
+            </p>
+            <p>
+              <a href="{% url 'guestbook' %}" class="link-guestbook">Go to Guestbook</a>
+            </p>
+          </article>
+      <article class="project-card">
+        <h3>Project 2 Title</h3>
+        <p>Short explanation or description of project 2.</p>
+      </article>
+      <article class="project-card">
+        <h3>Project 3 Title</h3>
+        <p>Short explanation or description of project 3.</p>
+      </article>
+      <article class="project-card">
+        <h3>Project 4 Title</h3>
+        <p>Short explanation or description of project 4.</p>
+      </article>
+      <article class="project-card">
+        <h3>Project 5 Title</h3>
+        <p>Short explanation or description of project 5.</p>
+      </article>
+    </div>
+  </section>
 {% endblock %}
