@@ -1,0 +1,195 @@
+body {
+    background: #f0f0f0 url("../images/cb.svg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 50px 20px;
+    margin: 0;
+    color: #333;
+    text-align: left;  /* change from center to left */
+}
+
+/* Headings */
+h1 {
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif !important;
+    margin-bottom: 0em;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+h1 a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* contact page */
+h2 {
+    color: #f0f0f0;  /* or white */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.banner-image {
+    text-align: center; /* This centers the inline-block image inside */
+}
+
+.banner-image img {
+    width: 400px;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 75px;
+    display: inline-block;
+}
+
+/* Paragraph general style */
+p {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Bonus: Button style for future use */
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    margin-top: 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Wrapper for paragraph + links side-by-side */
+.text-links-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+/* Paragraph inside text-links-wrapper */
+.text-links-wrapper p {
+    flex: 1; /* take available space */
+    color: #f0f0f0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.side-links {
+    min-width: 160px;
+    flex-shrink: 0;
+    border-right: 2px solid #f0f0f0;
+    padding-right: 15px;
+    margin-right: 10px;
+}
+
+.side-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-links li {
+    margin-bottom: 15px;
+}
+
+.side-links a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.side-links a:hover {
+    color: #f0f0f0;
+}
+
+.container {
+    max-width: 900px;      /* Matches your existing max-width */
+    margin: 0 auto;        /* Center horizontally */
+    padding: 0 20px;       /* Side padding to prevent text touching edges */
+    text-align: left;      /* Override body center text alignment */
+}
+
+footer a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+/* CONTACT PAGE LAYOUT - LINKS ON LEFT, FORM ON RIGHT */
+.contact-layout {
+    display: flex;
+    max-width: 900px;
+    margin: 50px 0 50px 20px;  /* push layout left */
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: nowrap;  /* prevent wrapping */
+}
+
+.contact-sidebar {
+    flex: 0 0 180px;    /* fixed width sidebar */
+    border-right: 2px solid #f0f0f0;
+    padding-right: 20px;
+    margin-left: 0;
+}
+
+.contact-main {
+    flex: 1 1 auto;
+    min-width: 300px;
+}
+
+/* Responsive tweak: only stack on very small screens */
+@media (max-width: 480px) {
+    .contact-layout {
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .contact-sidebar {
+        border-right: none;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 20px;
+        width: 100%;
+        margin-left: 0;
+    }
+    .contact-main {
+        width: 100%;
+    }
+}
+
+/* Contact form styles */
+.contact-form-wrapper h2 {
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form-wrapper form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

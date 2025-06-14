@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Virtual env
+.venv/
+env/
+venv/
+
+# Django secret stuff
+.env
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
