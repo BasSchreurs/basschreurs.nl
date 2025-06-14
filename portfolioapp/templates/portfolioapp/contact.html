@@ -1,16 +1,32 @@
 {% extends "portfolioapp/base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block content %}
   <h2 style="color: white; text-align: center; font-family: 'Montserrat', sans-serif;">Contact Me</h2>
 
-  <form method="post" style="max-width: 400px; margin: 20px auto;">
+  {% if messages %}
+    <ul class="messages" style="max-width: 400px; margin: 10px auto; padding: 0; text-align: center;">
+      {% for message in messages %}
+        <li style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border-radius: 4px; list-style: none; display: inline-block;">
+          {{ message }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="post" style="max-width: 400px; margin: 20px auto; display: flex; flex-direction: column; gap: 15px;">
     {% csrf_token %}
-    {{ form.as_p }}
+
+    <label for="{{ form.name.id_for_label }}" style="color: white;">Name</label>
+    {{ form.name|add_class:"form-input" }}
+
+    <label for="{{ form.email.id_for_label }}" style="color: white;">Email</label>
+    {{ form.email|add_class:"form-input" }}
+
+    <label for="{{ form.message.id_for_label }}" style="color: white;">Message</label>
+    {{ form.message|add_class:"form-textarea" }}
+
     <button type="submit" class="btn">Send</button>
   </form>
-
-  {% if success %}
-    <p style="color: lightgreen; text-align: center;">Your message was sent successfully!</p>
-  {% endif %}
 {% endblock %}

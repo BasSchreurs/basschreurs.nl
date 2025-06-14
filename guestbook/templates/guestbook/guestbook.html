@@ -1,0 +1,40 @@
+{% extends "portfolioapp/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+  <h2 style="color: white; text-align: center; font-family: 'Montserrat', sans-serif;">Guestbook</h2>
+
+  <form method="post" style="max-width: 400px; margin: 20px auto; display: flex; flex-direction: column; gap: 15px;">
+    {% csrf_token %}
+
+    <label for="{{ form.name.id_for_label }}" style="color: white;">Name</label>
+    {{ form.name|add_class:"form-input" }}
+
+    <label for="{{ form.message.id_for_label }}" style="color: white;">Message</label>
+    {{ form.message|add_class:"form-textarea" }}
+
+    <button type="submit" class="btn">Sign Guestbook</button>
+  </form>
+
+  <section style="max-width: 400px; margin: 30px auto;">
+    <h3 style="color: white; font-family: 'Montserrat', sans-serif; text-align: center;">Previous entries:</h3>
+    {% for entry in entries %}
+      <div 
+        style="background:#222; padding:10px; margin-bottom:10px; border-radius:6px; color: #eee; 
+               font-family: 'Montserrat', sans-serif; position: relative;
+               max-width: 100%; box-sizing: border-box; 
+               word-wrap: break-word; overflow-wrap: break-word;">
+        <strong>{{ entry.name }}</strong> 
+        <em style="font-size: 0.85rem; float: right;">on {{ entry.created_at|date:"Y-m-d H:i" }}</em>
+        <p style="clear: both; margin-top: 8px;">{{ entry.message }}</p>
+        <form method="post" action="{% url 'delete_message' entry.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn-delete">Delete</button>
+        </form>
+      </div>
+    {% empty %}
+      <p style="color: white; text-align: center;">No entries yet. Be the first!</p>
+    {% endfor %}
+  </section>
+{% endblock %}
