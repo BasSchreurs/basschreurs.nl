@@ -1,0 +1,31 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Contact — Bas Schreurs{% endblock %}
+
+{% block content %}
+
+<form action="https://formsubmit.co/2f133f8d80bb0265415c5ead493ab61e" method="POST" class="contact-form">
+  
+  <!-- Redirect back to home after submission -->
+  <input type="hidden" name="_next" value="https://www.basschreurs.nl/home/" />
+  
+  <!-- Disable CAPTCHA -->
+  <input type="hidden" name="_captcha" value="false">
+  
+  <h2>Send me a message</h2>
+
+  <label for="name">Your Name:</label>
+  <input type="text" id="name" name="name" required />
+
+  <label for="email">Your Email:</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" rows="10" required></textarea>
+
+  <button type="submit">Send</button>
+</form>
+
+{% endblock %}
+

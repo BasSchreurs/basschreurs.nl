@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Bas Schreurs{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'website/css/styles.css' %}">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous"
+/>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+  <div class="social-footer">
+    <a href="https://github.com/BasSchreurs" target="_blank">
+      <i class="fab fa-github fa-2x"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/bas-schreurs-a6628015b" target="_blank">
+      <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+  </div>
+  <div style="font-size: 0.9rem; color: black;">
+    &copy; 2025 — 
+    <a href="{% url 'contact' %}" style="color: black; text-decoration: underline;">contact@basschreurs.nl</a> — 
+    (Django) Web Developer
+  </div>
+</footer>
+</body>
+</html>
