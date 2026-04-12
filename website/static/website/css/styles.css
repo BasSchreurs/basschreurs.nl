@@ -79,6 +79,10 @@ article {
   color: #333;
 }
 
+ul {
+  margin-top: 0;
+}
+
 a {
   font-weight: bold;
   text-decoration: underline;

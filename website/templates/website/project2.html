@@ -3,13 +3,36 @@
 
 {% block content %}
 <article>
-  <h2>Project 2</h2>
+  <h2>Project 2 - Bassinga  |
+    <a href="https://basschreurs.nl/bassinga" target="_blank">Website</a>  |
+    <a href="https://github.com/BasSchreurs/Bassinga" target="_blank">Github</a>
+  </h2>
   <p>
-    Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
-    Iaculis massa nisl malesuada lacinia integer nunc posuere. 
-    Ut hendrerit semper vel class aptent taciti sociosqu. 
-    Ad litora torquent per conubia nostra inceptos himenaeos.
-    <a href="{% url 'project2' %}">click here</a>
+    Bassinga is een passieproject om behendiger te worden met het creëren van webapplicaties. 
+    Ik speel zelf basgitaar en wilde een tool om al mijn oefeningen op één plek te hebben.
+    Een plek die theorie en praktijk samenbrengt.<br>
+    De kern van Bassinga is een rollende tabnotatie-speler die ik zelf heb bedacht en ontwikkeld. Via een menu kies je een nummer, 
+    waarna de tabnotatie automatisch van rechts naar links scrolt als een teleprompter op eigen tempo.<br>
+    De snelheid is instelbaar en de speler kan worden gepauzeerd. Daarnaast beschikt Bassinga over 
+    een tuner waarmee je de basgitaar kunt stemmen en kunt zien welke noot je speelt.
   </p>
+  Gebouwd met:
+  <ul>
+    <li>Python & Django</li>
+    <li>JavaScript</li>
+    <li>HTML & CSS</li>
+    <li>SQLite</li>
+    <li>Nginx & Gunicorn (VPS)</li>
+  </ul>
+  Functionaliteit:
+  <ul>
+    <li>Rollende tabnotatie-speler met instelbare snelheid en pauzeerfunctie.</li>
+    <li>Nummers aanmaken en opslaan via het Django admin panel.</li>
+    <li>Ingebouwde tuner om de basgitaar te stemmen en noten te herkennen.</li>
+  </ul>
+  Demo:<br><br>
+  <span style="display: block; text-align: center;">Tabnotatie-speler in actie.</span>
+  <video src="{% static 'website/images/Bassinga.webm' %}" style="width: 100%;" controls></video>
+
 </article>
 {% endblock %}

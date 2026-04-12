@@ -9,7 +9,7 @@
   <div class="header-left">
     <h1>Bas Schreurs</h1>
     <p>Back-End WebDeveloper</p>
-    <p>Driven by Django | Ready for my next challenge</p>
+    <p>Driven by Django | Klaar voor mijn volgende uitdaging</p>
   </div>
   <div class="header-right">
     <img src="{% static 'website/images/basbw.jpg' %}" alt="My Photo" />
@@ -17,36 +17,34 @@
 </header>
 
 <article>
-  <h2>Project 1</h2>
+  <h2>Project 1 - <a href="{% url 'project1' %}">LittleLemon</a></h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-    Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-    In id cursus mi pretium tellus duis convallis. 
-    Tempus leo eu aenean sed diam urna tempor.
-    <a href="{% url 'project1' %}">click here</a>
+    LittleLemon is het eindproject van mijn Meta Back-End Developer cursus van Coursera. 
+    Het is een Django-applicatie met een menupagina, een reserveringssysteem met validatie 
+    van openingstijden en een Django Admin omgeving voor beheer. 
+    <a href="{% url 'project1' %}">meer info</a>
   </p>
 </article>
 
 <article>
-  <h2>Project 2</h2>
+  <h2>Project 2 - <a href="{% url 'project2' %}">Bassinga</a></h2>
   <p>
-    Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
-    Iaculis massa nisl malesuada lacinia integer nunc posuere. 
-    Ut hendrerit semper vel class aptent taciti sociosqu. 
-    Ad litora torquent per conubia nostra inceptos himenaeos.
-    <a href="{% url 'project2' %}">click here</a>
+    Bassinga is een persoonlijk project waarbij ik een webapplicatie heb gebouwd voor mijn hobby.
+    Ik speel basgitaar en wilde een tool voor mijn oefeningen. De kern is een zelfgebouwde 
+    tabnotatie-speler die nummers als een teleprompter afspeelt. Dit aangevuld met een tuner die de 
+    noten toont die je speelt.
+    <a href="{% url 'project2' %}">meer info</a>
   </p>
 </article>
 
 <article>
-  <h2>Project 3</h2>
+  <h2>Project 3 - <a href="{% url 'project3' %}">MotoMeet</a></h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipiscing elit.
-    Quisque faucibus ex sapien vitae pellentesque sem placerat.
-    In id cursus mi pretium tellus duis convallis.
-    Tempus leo eu aenean sed diam urna tempor.
-    Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
-    <a href="{% url 'project3' %}">click here</a>
+    Motomeet heb ik gemaakt om te oefenen met een grootschalig project. 
+    Ik had als gedachte een social media platform te maken en zo mijn 
+    full stack vaardigheden te verbeteren. Dit heeft me een beter inzicht 
+    gegeven hoe je een applicatie van begin tot eind structureert. 
+    <a href="{% url 'project3' %}">meer info</a>
   </p>
 </article>
 

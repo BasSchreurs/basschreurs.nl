@@ -3,13 +3,39 @@
 
 {% block content %}
 <article>
-  <h2>Project 1</h2>
+  <h2>Project 1 - LittleLemon  |
+    <a href="https://basschreurs.nl/littlelemon" target="blank">Website</a>  |
+    <a href="https://github.com/BasSchreurs/littlelemon" target="blank">Github</a>
+</h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-    Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-    In id cursus mi pretium tellus duis convallis. 
-    Tempus leo eu aenean sed diam urna tempor.
-    <a href="{% url 'project1' %}">click here</a>
-  </p>
+  Dit is het eindproject van mijn Meta Back-End Developer cursus van coursera 
+  <a href="https://coursera.org/share/c2b1c1766fff6b3f4d7a30599010de76" target="blank">Certificaat</a>.
+  Dit project bracht alles samen wat ik tijdens de cursus heb geleerd, 
+  zoals het bouwen van een Django applicatie, het werken met modellen en databases, 
+  formuliervalidatie en het opzetten van een admin omgeving.</p>
+  Gebouwd met:
+  <ul>
+    <li>Python & Django</li>
+    <li>SQLite</li>
+    <li>HTML & CSS</li>
+  </ul>
+  Functionaliteit:
+  <ul>
+    <li>Menupagina met voor-, hoofd- en nagerechten.</li>
+    <li>Reserveringssysteem met validatie van openingstijden.</li>
+    <li>Django Admin voor beheer van menu en boekingen. (De database staat bewust 
+      in de repository, zodat het project direct te bekijken en te draaien is.)
+    </li>
+  </ul>
+Screenshots:<br><br>
+<span style="display: block; text-align: center;">Een succesvolle reservering.</span>
+<img src="{% static 'website/images/foto1_littlelemon.png' %}" alt="foto1_littlelemon" style="width: 100%;"><br><br>
+<span style="display: block; text-align: center;">Een onsuccesvolle reservering.</span>
+<img src="{% static 'website/images/foto2_littlelemon.png' %}" alt="foto2_littlelemon" style="width: 100%;"><br><br>
+<span style="display: block; text-align: center;">Het menu wat in het admin panel te bewerken is.</span>
+<img src="{% static 'website/images/foto3_littlelemon.png' %}" alt="foto3_littlelemon" style="width: 100%;"><br><br>
+<span style="display: block; text-align: center;">Admin panel om menu te bewerken</span><br>
+<img src="{% static 'website/images/foto4_littlelemon.png' %}" alt="foto4_littlelemon" style="width: 100%;"><br><br>
+<img src="{% static 'website/images/foto5_littlelemon.png' %}" alt="foto5_littlelemon" style="width: 100%;"><br>
 </article>
 {% endblock %}
