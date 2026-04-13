@@ -6,25 +6,24 @@
 {% block content %}
 
 <form action="https://formsubmit.co/2f133f8d80bb0265415c5ead493ab61e" method="POST" class="contact-form">
-  
-  <!-- Redirect back to home after submission -->
-  <input type="hidden" name="_next" value="https://www.basschreurs.nl/home/" />
-  
-  <!-- Disable CAPTCHA -->
-  <input type="hidden" name="_captcha" value="false">
-  
-  <h2>Send me a message</h2>
 
-  <label for="name">Your Name:</label>
+  <input type="hidden" name="_next" value="https://basschreurs.nl/home/" />
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New message from portfolio">
+  <input type="hidden" name="_template" value="table">
+
+  <h2>Stuur een bericht</h2>
+
+  <label for="name">Uw naam:</label>
   <input type="text" id="name" name="name" required />
 
-  <label for="email">Your Email:</label>
+  <label for="email">Uw email:</label>
   <input type="email" id="email" name="email" required />
 
-  <label for="message">Message:</label>
+  <label for="message">Uw bericht:</label>
   <textarea id="message" name="message" rows="10" required></textarea>
 
-  <button type="submit">Send</button>
+  <button type="submit">Stuur</button>
 </form>
 
 {% endblock %}
