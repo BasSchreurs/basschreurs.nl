@@ -23,6 +23,8 @@ services:
       - static_files:/app/staticfiles
       - littlelemon_static:/app/littlelemon_staticfiles
       - bassinga_static:/app/bassinga_staticfiles
+      - motomeet_static:/app/motomeet_staticfiles
+      - motomeet_media:/app/motomeet_media
       - /etc/letsencrypt:/etc/letsencrypt:ro
     depends_on:
       - web
@@ -35,6 +37,10 @@ volumes:
   littlelemon_static:
     external: true
   bassinga_static:
+    external: true
+  motomeet_static:
+    external: true
+  motomeet_media:
     external: true
 
 networks:
