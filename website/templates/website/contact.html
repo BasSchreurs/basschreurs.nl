@@ -5,12 +5,8 @@
 
 {% block content %}
 
-<form action="https://formsubmit.co/2f133f8d80bb0265415c5ead493ab61e" method="POST" class="contact-form">
-
-  <input type="hidden" name="_next" value="https://basschreurs.nl/home/" />
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="New message from portfolio">
-  <input type="hidden" name="_template" value="table">
+<form method="POST" class="contact-form">
+  {% csrf_token %}
 
   <h2>Stuur een bericht</h2>
 
@@ -27,4 +23,3 @@
 </form>
 
 {% endblock %}
-
