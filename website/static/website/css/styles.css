@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 /* Reset and base styles */
 body {
   margin: 0;
@@ -121,6 +125,7 @@ footer {
 /* Contact form styling */
 .contact-form {
   max-width: 500px;
+  width: 95%;
   margin: 2rem auto;
   font-family: sans-serif;
   display: flex;
