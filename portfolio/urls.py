@@ -28,4 +28,5 @@ urlpatterns = [
     path('project2/', views.project2, name='project2'),
     path('project3/', views.project3, name='project3'),
     path('project4/', views.project4, name='project4'),
+    path('project5/', views.project5, name='project5'), 
 ]

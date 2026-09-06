@@ -8,14 +8,19 @@
     <a href="https://github.com/BasSchreurs/Bassinga" target="_blank">📦 Github</a>
   </h2>
   <p>
-    Bassinga is een passieproject om behendiger te worden met het creëren van webapplicaties. 
-    Ik speel zelf basgitaar en wilde een tool om al mijn oefeningen op één plek te hebben.
-    Een plek die theorie en praktijk samenbrengt.<br>
-    De kern van Bassinga is een rollende tabnotatie-speler die ik zelf heb bedacht en ontwikkeld. Via een menu kies je een nummer, 
-    waarna de tabnotatie automatisch van rechts naar links scrolt als een teleprompter op eigen tempo.<br>
-    De snelheid is instelbaar en de speler kan worden gepauzeerd. Daarnaast beschikt Bassinga over 
-    een tuner waarmee je de basgitaar kunt stemmen en kunt zien welke noot je speelt. De tuner werkt helaas alleen
-    local, omdat de app op een server wordt gehost zonder geluidskaart.
+      Bassinga is een passieproject om behendiger te worden in het creëren van webapplicaties. 
+      Ik speel zelf basgitaar en wilde een tool om al mijn oefeningen op één plek te hebben.<br>
+      De kern van Bassinga is een rollende tabnotatie-speler die ik zelf heb bedacht en ontwikkeld. Via een menu kies je een nummer, 
+      waarna de tabnotatie automatisch van rechts naar links scrolt als een teleprompter op eigen tempo.<br>
+      De snelheid is instelbaar en de speler kan worden gepauzeerd. Daarnaast beschikt Bassinga over 
+      een tuner waarmee je de basgitaar kunt stemmen en kunt zien welke noot je speelt.
+  </p>
+
+  <p>
+      Dit was een goede test voor mij, aangezien ik op een klassiek probleem liep. 
+      In eerste instantie werkte de tuner helaas alleen lokaal. 
+      Dit kwam doordat de tuner toegang nodig had tot de microfoon van de gebruiker, iets wat niet server-side kan worden afgehandeld. 
+      Ik heb dit opgelost door de tuner client-side in de browser te laten werken, waardoor de microfoon rechtstreeks vanaf het apparaat van de gebruiker kan worden benaderd.
   </p>
   Gebouwd met:
   <ul>
@@ -31,9 +36,10 @@
     <li>Nummers aanmaken en opslaan via het Django admin panel.</li>
     <li>Ingebouwde tuner om de basgitaar te stemmen en noten te herkennen.</li>
   </ul>
-  Demo:<br><br>
-  <span style="display: block; text-align: center; text-decoration: underline; font-style: italic;">Tabnotatie-speler in actie</span><br>
-  <video src="{% static 'website/images/Bassinga.webm' %}" style="width: 100%;" controls></video>
+  Screenshot:<br><br>
+<img src="{% static 'website/images/Bassinga.png' %}"
+     alt="Bassinga tabnotatie-speler"
+     style="width: 100%;">
 
 </article>
 {% endblock %}

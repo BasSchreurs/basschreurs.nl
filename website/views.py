@@ -19,6 +19,9 @@ def project3(request):
 def project4(request):
     return render(request, 'website/project4.html')
 
+def project5(request):
+    return render(request, 'website/project5.html')
+
 def contact_view(request):
     print("VIEW HIT")
 
