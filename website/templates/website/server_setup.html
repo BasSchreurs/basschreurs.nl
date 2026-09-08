@@ -1,0 +1,148 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block content %}
+<article>
+<h2>Server Setup & Workflow</h2>
+<p>
+    Hier is een overzicht van mijn server setup en workflow. Ik host meerdere Django-projecten
+    op één VPS, elk draaiend in zijn eigen Docker-container, met nginx als reverse proxy die
+    het verkeer naar de juiste container verwijst. Ik maak verbinding met mijn server via de terminal met SSH.
+</p>
+
+<h3>Docker containers</h3>
+<p>
+    Elk project draait in zijn eigen Docker-container. Hieronder zie je de output van
+    <code>docker ps</code>, met alle containers die op dit moment actief zijn.
+</p>
+<img src="{% static 'website/images/docker_containers.png' %}" alt="foto_docker_containers" style="width: 100%;"><br>
+
+<h3>Deploy workflow</h3>
+<p>
+    Ik werk local en push wijzigingen via Git. 
+    Vervolgens log ik in op mijn server voor<code>git pull</code>van de nieuwe versie, en herbouw ik de betreffende 
+    container(s) met <code>docker compose up --build -d</code>.
+</p>
+<img src="{% static 'website/images/docker_compose.png' %}" alt="foto_docker_compose" style="width: 100%;"><br>
+<img src="{% static 'website/images/docker_compose_file.png' %}" alt="foto_docker_compose_file" style="width: 100%;"><br>
+
+<h3>Nginx, SSL-certificaten en port forwarding</h3>
+<p>
+    Eén nginx-container fungeert als reverse proxy voor drie verschillende domeinen.
+    Op basis van de <strong>Host-header</strong> die de browser meestuurt, weet nginx welk domein
+    de bezoeker wil bereiken en stuurt het verkeer naar de juiste Docker-container.
+    Elk domein heeft een eigen SSL-certificaat via Let's Encrypt, zodat al het verkeer
+    versleuteld verloopt (HTTPS).
+</p>
+<p>
+    Binnen elk domein gebruik ik <code>location</code>-blocks om verkeer op basis van het pad
+    naar verschillende containers te sturen. Zo draaien er op <code>basschreurs.nl</code>
+    bijvoorbeeld meerdere sub-projecten (zoals <code>/littlelemon/</code> en <code>/home/</code>)
+    die elk naar hun eigen container worden doorgestuurd, terwijl al het overige verkeer
+    naar mijn hoofdportfolio gaat.
+</p>
+
+<pre><code>server {
+    listen 80;
+    server_name basschreurs.nl www.basschreurs.nl;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name basschreurs.nl www.basschreurs.nl;
+
+    ssl_certificate /etc/letsencrypt/live/basschreurs.nl/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/basschreurs.nl/privkey.pem;
+
+    location /static/ {
+        alias /app/staticfiles/;
+    }
+
+    location /littlelemon/static/ {
+        alias /app/littlelemon_staticfiles/;
+    }
+
+    location /littlelemon/ {
+        proxy_pass http://littlelemon-web-1:8001/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location /home/static/ {
+        alias /app/dashboard_staticfiles/;
+    }
+
+    location /home/ {
+        proxy_pass http://dashboard-web-1:8004/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location / {
+        proxy_pass http://web:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+server {
+    listen 80;
+    server_name bassinga.com www.bassinga.com;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name bassinga.com www.bassinga.com;
+
+    ssl_certificate /etc/letsencrypt/live/bassinga.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/bassinga.com/privkey.pem;
+
+    location /static/ {
+        alias /app/bassinga_staticfiles/;
+    }
+
+    location / {
+        proxy_pass http://bassinga-web-1:8002;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+server {
+    listen 80;
+    server_name motomeet.nl www.motomeet.nl;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name motomeet.nl www.motomeet.nl;
+
+    ssl_certificate /etc/letsencrypt/live/motomeet.nl/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/motomeet.nl/privkey.pem;
+
+    location /static/ {
+        alias /app/motomeet_staticfiles/;
+    }
+
+    location /media/ {
+        alias /app/motomeet_media/;
+    }
+
+    location / {
+        proxy_pass http://motomeet-web-1:8003;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}</code></pre>
+
+<p>
+    De volledige README met alle stappen staat op
+    <a href="https://github.com/BasSchreurs/basschreurs.nl/blob/main/README.md" target="_blank">GitHub</a>.
+</p>
+
+</p>
+</article>
+{% endblock %}

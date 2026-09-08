@@ -24,9 +24,9 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact_view, name='contact'),
     path('contact/success/', views.contact_success, name='contact_success'),
+    path('server-setup/', views.server_setup, name='server_setup'),
     path('little-lemon/', views.little_lemon, name='little_lemon'),
     path('bassinga/', views.bassinga, name='bassinga'),
     path('motomeet/', views.motomeet, name='motomeet'),
     path('dashboard/', views.dashboard, name='dashboard'),
-    path('lorum-ipsum/', views.lorum_ipsum, name='lorum_ipsum'), 
 ]

@@ -7,6 +7,9 @@ def home(request):
 def about(request):
     return render(request, 'website/about.html')
 
+def server_setup(request):
+    return render(request, 'website/server_setup.html')
+
 def little_lemon(request):
     return render(request, 'website/little_lemon.html')
 
@@ -18,9 +21,6 @@ def motomeet(request):
 
 def bassinga(request):
     return render(request, 'website/bassinga.html')
-
-def lorum_ipsum(request):
-    return render(request, 'website/lorum_ipsum.html')
 
 def contact_view(request):
     print("VIEW HIT")
