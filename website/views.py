@@ -7,20 +7,20 @@ def home(request):
 def about(request):
     return render(request, 'website/about.html')
 
-def project1(request):
-    return render(request, 'website/project1.html')
+def littlelemon(request):
+    return render(request, 'website/littlelemon.html')
 
-def project2(request):
-    return render(request, 'website/project2.html')
+def dashboard(request):
+    return render(request, 'website/dashboard.html')
 
-def project3(request):
-    return render(request, 'website/project3.html')
+def motomeet(request):
+    return render(request, 'website/motomeet.html')
 
-def project4(request):
-    return render(request, 'website/project4.html')
+def bassinga(request):
+    return render(request, 'website/bassinga.html')
 
-def project5(request):
-    return render(request, 'website/project5.html')
+def lorum_ipsum(request):
+    return render(request, 'website/lorum_ipsum.html')
 
 def contact_view(request):
     print("VIEW HIT")

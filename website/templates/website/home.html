@@ -17,50 +17,61 @@
 </header>
 
 <article>
-  <h2>Project 1 - <a href="{% url 'project1' %}">LittleLemon</a></h2>
+  <h2>DIY projecten</h2>
+  <p>
+    Dit zijn mijn projecten waarmee ik mijn vaardigheden als webdeveloper verder ontwikkel.
+    De focus ligt hierbij vooral op de Back-End en een stukje DevOps, omdat ik dit zelf het meest interessant vind.
+    Als onderwerp heb ik vaak gekozen voor projecten die aansluiten bij mijn interesses/hobbies.
+  </p>
+</article>
+
+<article>
+  <h2>Project 1 - <a href="{% url 'littlelemon' %}">LittleLemon</a></h2>
   <p>
     LittleLemon is het eindproject van mijn Meta Back-End Developer cursus van Coursera. 
     Het is een Django-applicatie met een menupagina, een reserveringssysteem met validatie 
     van openingstijden en een Django Admin omgeving voor beheer. 
-    <a href="{% url 'project1' %}">Meer info →</a>
+    <a href="{% url 'littlelemon' %}">Meer info →</a>
   </p>
 </article>
 
 <article>
-  <h2>Project 2 - <a href="{% url 'project2' %}">Bassinga</a></h2>
+  <h2>
+    Project 2 – <a href="{% url 'dashboard' %}">Personal Dashboard</a></h2>
   <p>
-    Bassinga is een persoonlijk project waarbij ik een webapplicatie heb gebouwd voor mijn hobby.
-    Ik speel basgitaar en wilde een tool voor mijn oefeningen. De kern is een zelfgebouwde 
-    tabnotatie-speler die nummers als een teleprompter afspeelt. Dit aangevuld met een tuner die de 
-    noten toont die je speelt.
-    <a href="{% url 'project2' %}">Meer info →</a>
+    Het Personal Dashboard is mijn persoonlijke startpagina gebouwd met Django.
+    Het weer, nieuws, zoekopdrachten en notities. Alles wat ik nodig heb direct op één plek.
+    <a href="{% url 'dashboard' %}">Meer info →</a>
   </p>
 </article>
 
 <article>
-  <h2>Project 3 - <a href="{% url 'project3' %}">MotoMeet</a></h2>
+  <h2>Project 3 - <a href="{% url 'motomeet' %}">MotoMeet</a></h2>
   <p>
     Motomeet heb ik gemaakt om te oefenen met een grootschalig project. 
     Ik had als gedachte een social media platform te maken en zo mijn 
     full stack vaardigheden te verbeteren. Dit heeft me een beter inzicht 
     gegeven hoe je een applicatie van begin tot eind structureert. 
-    <a href="{% url 'project3' %}">Meer info →</a>
+    <a href="{% url 'motomeet' %}">Meer info →</a>
   </p>
 </article>
 
 <article>
-  <h2>
-    Project 4 – <a href="{% url 'project4' %}">Personal Dashboard</a></h2>
+  <h2>Project 4 - <a href="{% url 'bassinga' %}">Bassinga</a> | 🚧 Work in progress </h2>
   <p>
-    Het Personal Dashboard is mijn persoonlijke startpagina gebouwd met Django.
-    Het weer, nieuws, zoekopdrachten en notities. Alles wat ik nodig heb direct op één plek.
-    <a href="{% url 'project4' %}">Meer info →</a>
+    Bassinga is een persoonlijk project waarbij ik een webapplicatie heb gebouwd voor mijn hobby.
+    Ik speel basgitaar en wilde een tool voor mijn oefeningen. De kern is een zelfgebouwde 
+    tabnotatie-speler die nummers als een teleprompter afspeelt. Dit aangevuld met een tuner die de 
+    noten toont die je speelt.
+    Daarnaast ben ik bezig met het bouwen van een tool die youtube links omzet naar tabnotatie.
+    Hiervoor gebruik ik een AI model, die audio omzet naar muzieknoten.
+    <a href="{% url 'bassinga' %}">Meer info →</a>
   </p>
 </article>
 
 <article>
   <h2>
-    Project 5 – <a href="{% url 'project5' %}">Open Source</a>
+    Project 5 – <a href="{% url 'lorum_ipsum' %}">AI model voor analyseren van de aandelenmarkt</a>
   </h2>
   <p>
     🚧 Work in progress - wordt vervolgd!
