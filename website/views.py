@@ -7,8 +7,8 @@ def home(request):
 def about(request):
     return render(request, 'website/about.html')
 
-def littlelemon(request):
-    return render(request, 'website/littlelemon.html')
+def little_lemon(request):
+    return render(request, 'website/little_lemon.html')
 
 def dashboard(request):
     return render(request, 'website/dashboard.html')

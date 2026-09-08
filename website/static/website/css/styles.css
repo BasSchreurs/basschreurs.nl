@@ -75,6 +75,13 @@ header {
   display: block;
 }
 
+.intro-tekst {
+  font-style: italic;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
 /* Articles stacked vertically, centered */
 article {
   max-width: 600px;
