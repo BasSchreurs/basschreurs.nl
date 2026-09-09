@@ -7,7 +7,7 @@
 
 <header>
   <div class="header-left">
-    <h1>Bas Schreurs</h1>
+    <h1><a href="{% url 'about' %}">Bas Schreurs</a></h1>
     <p>Back-End WebDeveloper</p>
     <p>Driven by Django | Klaar voor mijn volgende uitdaging</p>
   </div>
@@ -17,13 +17,14 @@
 </header>
 
 <article>
-  <h2>DIY Lab</h2>
+  <h2>Portfolio</h2>
   <p class="intro-tekst">
-    Dit zijn mijn projecten waarmee ik mijn vaardigheden als webdeveloper verder ontwikkel.
-    De focus ligt hierbij vooral op de Back-End en een stukje DevOps, omdat ik dit zelf het meest interessant vind.
-    Als onderwerp heb ik vaak gekozen voor projecten die aansluiten bij mijn interesses/hobbies.<br><br>
-    Al mijn projecten host ik via een VPS bij Hetzner. Ik heb hier een Ubuntu server draaien met Nginx, Gunicorn en Docker.
-    <a href="{% url 'server_setup' %}">Meer info over mijn server setup en workflow.</a>
+    Hieronder staan mijn projecten waarmee ik mijn vaardigheden als back-end developer verder ontwikkel 
+    en verschillende technieken in de praktijk toepas.<br><br>
+    Mijn focus ligt niet alleen op development, maar op de volledige weg naar een productieomgeving. 
+    Daarom host ik mijn projecten zelf op een Ubuntu-server en werk ik onder andere met 
+    Django, Docker, Nginx en Gunicorn.
+    <a href="{% url 'server_setup' %}">Bekijk mijn server setup en workflow.</a>
   </p>
 </article>
 
@@ -43,6 +44,7 @@
   <p>
     Het Personal Dashboard is mijn persoonlijke startpagina gebouwd met Django.
     Het weer, nieuws, zoekopdrachten en notities. Alles wat ik nodig heb direct op één plek.
+    Een leuke en handige tool voor dagelijks gebruik.
     <a href="{% url 'dashboard' %}">Meer info →</a>
   </p>
 </article>
@@ -50,10 +52,9 @@
 <article>
   <h2>Project 3 - <a href="{% url 'motomeet' %}">MotoMeet</a></h2>
   <p>
-    Motomeet heb ik gemaakt om te oefenen met een grootschalig project. 
-    Ik had als gedachte een social media platform te maken en zo mijn 
-    full stack vaardigheden te verbeteren. Dit heeft me een beter inzicht 
-    gegeven hoe je een applicatie van begin tot eind structureert. 
+    MotoMeet heb ik gebouwd om ervaring op te doen met een grootschaliger full stack project. 
+    Vanuit het idee voor een social media platform heb ik de applicatie zelfstandig van begin tot eind 
+    ontworpen en opgebouwd, waardoor ik veel beter ben gaan begrijpen hoe je een applicatie structureert. 
     <a href="{% url 'motomeet' %}">Meer info →</a>
   </p>
 </article>
@@ -61,24 +62,25 @@
 <article>
   <h2>Project 4 - <a href="{% url 'bassinga' %}">Bassinga</a> | 🚧 Work in progress... </h2>
   <p>
-    Bassinga is een persoonlijk project waarbij ik een webapplicatie heb gebouwd voor mijn hobby.
-    Ik speel basgitaar en wilde een tool voor mijn oefeningen. De kern is een zelfgebouwde 
-    tabnotatie-speler die nummers als een teleprompter afspeelt. Dit aangevuld met een tuner die de 
-    noten toont die je speelt.
-    Daarnaast ben ik bezig met het bouwen van een tool die youtube links omzet naar tabnotatie.
-    Hiervoor gebruik ik een AI model, die audio omzet naar muzieknoten.
-    <a href="{% url 'bassinga' %}">Meer info →</a>
+    Bassinga is een persoonlijk project waarbij ik een webapplicatie heb gebouwd voor mijn hobby. 
+    Ik speel basgitaar en wilde een tool om te oefenen.<br>
+    De kern is een zelfgebouwde tabnotatie-speler die nummers als een teleprompter afspeelt, 
+    aangevuld met een tuner die de gespeelde noten toont. 
+    Daarnaast ben ik bezig met het ontwikkelen van een AI-tool die YouTube-audio omzet naar tabnotatie.
+<a href="{% url 'bassinga' %}">Meer info →</a>
   </p>
 </article>
 
 <article>
   <h2>
-    Project 5 – Zelfstudie
+    Project 5 – DevOps & Zelfstudie
   </h2>
   <p>
-    Verder ontwikkeln van werken met Vim, AI , open source projecten en verder ontwikkelen DevOps vaardigheden<br><br>
+    Naast webdevelopment wil ik mij verder verdiepen in servers, infrastructuur en DevOps.
+    Momenteel werk ik aan mijn kennis van deployment, serverbeheer en Vim.<br><br>
     🚧 Work in progress...
   </p>
 </article>
+
 
 {% endblock %}

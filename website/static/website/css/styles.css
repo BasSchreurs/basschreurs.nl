@@ -64,6 +64,16 @@ header {
   font-style: italic;
 }
 
+.header-left h1 a {
+  color: black;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.header-left h1 a:hover {
+  color: #555;
+}
+
 .header-right {
   margin-left: 1rem;
 }

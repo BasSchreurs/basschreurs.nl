@@ -3,32 +3,34 @@
 
 {% block content %}
 <article>
-  <h2>Project 2 - Bassinga  |
+  <h2>Project 4 - Bassinga  |
     <a href="https://bassinga.com" target="_blank">🌐 Website</a>  |
     <a href="https://github.com/BasSchreurs/Bassinga" target="_blank">📦 Github</a>
   </h2>
   <p>
-      Bassinga is een passieproject om behendiger te worden in het creëren van webapplicaties. 
-      Ik speel zelf basgitaar en wilde een tool om al mijn oefeningen op één plek te hebben.<br>
-      De kern van Bassinga is een rollende tabnotatie-speler die ik zelf heb bedacht en ontwikkeld. Via een menu kies je een nummer, 
-      waarna de tabnotatie automatisch van rechts naar links scrolt als een teleprompter op eigen tempo.<br>
-      De snelheid is instelbaar en de speler kan worden gepauzeerd. Daarnaast beschikt Bassinga over 
-      een tuner waarmee je de basgitaar kunt stemmen en kunt zien welke noot je speelt.
-  </p>
+  De kern van Bassinga is een zelfgebouwde tabnotatie-speler waarmee ik nummers in mijn eigen tempo kan oefenen.
+  De tabnotatie scrollt automatisch van rechts naar links, vergelijkbaar met een teleprompter.
+  De snelheid is instelbaar en de speler kan worden gepauzeerd. 
+  Daarnaast beschikt Bassinga over een tuner waarmee je de basgitaar kunt stemmen en kunt zien welke muzieknoot je speelt.
+</p>
 
-  <p>
-      Dit was een goede test voor mij, aangezien ik op een klassiek probleem liep. 
-      In eerste instantie werkte de tuner helaas alleen lokaal. 
-      Dit kwam doordat de tuner toegang nodig had tot de microfoon van de gebruiker, iets wat niet server-side kan worden afgehandeld. 
-      Ik heb dit opgelost door de tuner client-side in de browser te laten werken, waardoor de microfoon rechtstreeks vanaf het apparaat van de gebruiker kan worden benaderd.
-  </p>
+<p><strong>Wat heb ik geleerd</strong></p>
+<p>
+  Dit was een goede test voor mij, aangezien ik op een klassiek probleem liep.
+  In eerste instantie werkte de tuner helaas alleen lokaal.
+  Dit kwam doordat de tuner toegang nodig had tot de microfoon van de gebruiker, 
+  iets wat niet op de server kan worden afgehandeld.
+  Ik heb dit opgelost door de tuner client-side in de browser te laten werken.
+  Hierdoor kan de microfoon rechtstreeks vanaf het apparaat van de gebruiker worden benaderd.
+</p>
+
   Gebouwd met:
   <ul>
     <li>Python & Django</li>
-    <li>JavaScript</li>Screenshots:<br><br>
+    <li>JavaScript</li>
     <li>HTML & CSS</li>
     <li>SQLite</li>
-    <li>Nginx, Gunicorn & docker(VPS)</li>
+    <li>Nginx, Gunicorn & Docker</li>
   </ul>
   Functionaliteit:
   <ul>
