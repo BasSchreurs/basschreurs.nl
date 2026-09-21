@@ -5,9 +5,28 @@
 <article>
 <h2>Server Setup & Workflow</h2>
 <p>
-    Hier is een overzicht van mijn server setup en workflow. Ik host meerdere Django-projecten
-    op één VPS, elk draaiend in zijn eigen Docker-container, met nginx als reverse proxy die
-    het verkeer naar de juiste container verwijst. Ik maak verbinding met mijn server via de terminal met SSH.
+    Op mijn VPS host ik meerdere Django-projecten naast elkaar, elk in zijn eigen
+    Docker-container. Nginx fungeert als reverse proxy en zorgt dat inkomend
+    verkeer bij de juiste container terechtkomt.<br>
+    Mijn workflow is bewust simpel gehouden: ik ontwikkel lokaal, push naar
+    GitHub, en verbind vervolgens via SSH met mijn server om de wijzigingen
+    door te voeren. Hiervoor gebruik ik het volgende bash-script:
+    
+<pre><code>#!/bin/bash
+
+    git fetch
+    LOCAL=$(git rev-parse @)
+    REMOTE=$(git rev-parse @{u})
+
+    if [ "$LOCAL" != "$REMOTE" ]; then
+    echo "Found new version, updating..."
+    git pull
+    docker compose up -d --build
+    else
+    echo "Completed, project up-to-date."
+    fi
+</code></pre>
+
 </p>
 
 <h3>Docker containers</h3>
@@ -15,31 +34,14 @@
     Elk project draait in zijn eigen Docker-container. Hieronder zie je de output van
     <code>docker ps</code>, met alle containers die op dit moment actief zijn.
 </p>
-<img src="{% static 'website/images/docker_containers.png' %}" alt="foto_docker_containers" style="width: 100%;"><br>
-
-<h3>Deploy workflow</h3>
-<p>
-    Ik werk local en push wijzigingen via Git. 
-    Vervolgens log ik in op mijn server voor<code>git pull</code>van de nieuwe versie, en herbouw ik de betreffende 
-    container(s) met <code>docker compose up --build -d</code>.
-</p>
-<img src="{% static 'website/images/docker_compose.png' %}" alt="foto_docker_compose" style="width: 100%;"><br>
-<img src="{% static 'website/images/docker_compose_file.png' %}" alt="foto_docker_compose_file" style="width: 100%;"><br>
+<img src="{% static 'website/images/screenshot.png' %}" alt="foto_docker_containers" style="width: 100%;"><br>
 
 <h3>Nginx, SSL-certificaten en port forwarding</h3>
 <p>
-    Eén nginx-container fungeert als reverse proxy voor drie verschillende domeinen.
-    Op basis van de <strong>Host-header</strong> die de browser meestuurt, weet nginx welk domein
-    de bezoeker wil bereiken en stuurt het verkeer naar de juiste Docker-container.
-    Elk domein heeft een eigen SSL-certificaat via Let's Encrypt, zodat al het verkeer
-    versleuteld verloopt (HTTPS).
-</p>
-<p>
-    Binnen elk domein gebruik ik <code>location</code>-blocks om verkeer op basis van het pad
-    naar verschillende containers te sturen. Zo draaien er op <code>basschreurs.nl</code>
-    bijvoorbeeld meerdere sub-projecten (zoals <code>/littlelemon/</code> en <code>/home/</code>)
-    die elk naar hun eigen container worden doorgestuurd, terwijl al het overige verkeer
-    naar mijn hoofdportfolio gaat.
+    Twee projecten hebben ieder hun eigen domein en eigen server-configuratie
+    in nginx. De overige projecten draaien op sub-paden onder het domein
+    <code>basschreurs.nl</code>. Eén nginx-container regelt al het verkeer, met
+    voor elk domein een eigen SSL-certificaat via Let's Encrypt.
 </p>
 
 <pre><code>server {

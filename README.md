@@ -9,7 +9,7 @@ Personal portfolio site, deployed on a self-managed VPS using Docker, Gunicorn, 
 - Nginx (reverse proxy + SSL termination)
 - Docker & Docker Compose
 - Let's Encrypt (SSL certificates via Certbot)
-- Hosted on a Hetzner VPS
+- Hosted on a Hetzner VPS / ssh root@VPS
 
 ## Deployment Workflow
 
