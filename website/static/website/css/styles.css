@@ -209,3 +209,16 @@ footer {
 .contact-form button:hover {
   background-color: #333;
 }
+
+.contact-form .error {
+  color: #d93025;
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.contact-form .form-errors {
+  border: 1px solid #d93025;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
